@@ -13,7 +13,7 @@ public class H2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(max(10, 20));
-        System.out.println(max2(10, 20));
+        System.out.println(max(10, 30));
+        System.out.println(max2(10, 30));
     }
 }
