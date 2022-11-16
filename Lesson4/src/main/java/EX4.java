@@ -1,4 +1,9 @@
+import java.util.Scanner;
+
 public class EX4 {
+    private static final int secInHour = 3600;
+    ;
+
     //4) На некотором предприятии инженер Петров создал устройство, на табло которого показывается количество секунд,
 // оставшихся до конца рабочего дня. Когда рабочий день начинается ровно в 9 часов утра — табло отображает «28800» (т.е. остаётся 8 часов),
 // когда времени 14:30 — на табло «9000» (т.е. остаётся два с половиной часа), а когда наступает 17 часов — на табло отображается «0»
@@ -10,6 +15,39 @@ public class EX4 {
 // далее оно должно выводиться на экран (для Петрова) и на следующей строке (для сотрудниц) должна
 // выводиться фраза о количестве полных часов, содержащихся в n секундах.
     public static void main(String[] args) {
+        Scanner test1 = new Scanner(System.in);
+        try {
+            System.out.println("Введи число:");
+            int a = test1.nextInt();
+            if (a <= 0 || a > 28800) {
+                throw new Exception("Число должно быть в промежутке [0;28800]");
+            }
+            int hour = a / secInHour;
+            System.out.printf(" %d\n  ", a);
+            switch (hour) {
+                case 8:
+                case 7:
+                case 6:
+                case 5:
+                    System.out.printf("Осталось %d часов ", hour);
+                    break;
+                case 4:
+                case 3:
+                case 2:
+                    System.out.printf("Осталось %d часа ", hour);
+                    break;
+                case 1:
+                    System.out.printf("Остался %d час ", hour);
+                    break;
+                default:
+                    System.out.printf("Осталось меньше часа");
 
+            }
+
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+
+        }
     }
 }

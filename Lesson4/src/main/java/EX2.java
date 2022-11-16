@@ -16,7 +16,7 @@ public class EX2 {
             } else {
                 System.out.println("Не четное");
             }
-        } catch (Exception e) {
+        } catch (Exception EXE) {
 
             System.out.println("Ошибка!");
         }
